@@ -127,3 +127,101 @@ SERVICE nginx reload
 ```sh
 appjail makejail -j nginx -- --network development
 ```
+
+### PHP support
+
+Since there is a [Makejail](https://github.com/AppJail-makejails/php) for PHP, you can combine PHP and NGINX with a custom configuration to get a web server with PHP support.
+
+```
+INCLUDE options/network.makejail
+INCLUDE gh+AppJail-makejails/nginx
+INCLUDE gh+AppJail-makejails/php
+
+COPY --verbose usr
+
+SERVICE php-fpm reload
+SERVICE nginx reload
+```
+
+The tree structure of the `usr/` directory is as follows:
+
+```
+# tree -pug usr
+[drwxr-xr-x root     wheel   ]  usr
+└── [drwxr-xr-x root     wheel   ]  local
+    ├── [drwxr-xr-x root     wheel   ]  etc
+    │   ├── [drwxr-xr-x root     wheel   ]  nginx
+    │   │   └── [-rw-r--r-- root     wheel   ]  nginx.conf
+    │   └── [drwxr-xr-x root     wheel   ]  php-fpm.d
+    │       └── [-rw-r--r-- root     wheel   ]  www.conf
+    └── [drwxr-xr-x root     wheel   ]  www
+        └── [drwxr-xr-x root     wheel   ]  php
+            └── [-rw-r--r-- root     wheel   ]  index.php
+
+6 directories, 3 files
+```
+
+Where `nginx.conf` is your custom configuration file for NGINX, for example:
+
+```
+events {
+        worker_connections 1024;
+}
+
+http {
+        include       mime.types;
+        default_type  application/octet-stream;
+
+        upstream php {
+                server unix:/var/run/php-fpm.sock;
+        }
+
+        server {
+                listen 80;
+                server_name $hostname "";
+                root /usr/local/www/php;
+                index index.php;
+
+                client_max_body_size 8M;
+
+                location / {
+                        try_files $uri $uri/ =404;
+                }
+
+                location ~ \.php$ {
+                        include fastcgi_params;
+                        fastcgi_intercept_errors on;
+                        fastcgi_pass php;
+                        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                }
+        }
+}
+```
+
+`www.conf` is your custom configuration file for php-fpm, for example:
+
+```
+[www]
+user = www
+group = www
+listen = /var/run/php-fpm.sock
+listen.owner = www;
+listen.group = www;
+pm = dynamic
+pm.max_children = 5
+pm.start_servers = 2
+pm.min_spare_servers = 1
+pm.max_spare_servers = 3
+```
+
+`index.php` is your index file, for example:
+
+```php
+<?php echo "Hello, world!\n"; ?>
+```
+
+Open a shell and run `appjail makejail`:
+
+```sh
+appjail makejail -j nginx -- --network web
+```
