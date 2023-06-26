@@ -1,5 +1,5 @@
 INCLUDE options/options.makejail
 
-PKG nginx
-SYSRC nginx_enable=YES
-SERVICE nginx start
+ARG nginx_tag=latest
+
+FROM --entrypoint gh+AppJail-makejails/nginx nginx:${nginx_tag}

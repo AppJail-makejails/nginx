@@ -89,19 +89,21 @@ When you use network options that use a variant of NAT, you can expose ports:
 **options/network.makejail**:
 
 ```
-ARG network
+ARG network?
 ARG interface=nginx
 # external
 ARG eport=80
 # internal
 ARG iport=80
 
-OPTION virtualnet=${network}:${interface} default
+OPTION virtualnet=${network}?:${interface} default
 OPTION nat
 OPTION expose=${eport}:${iport}
 ```
 
 ```sh
+appjail makejail -j nginx -- --eport 8080
+# or use a network explicitly
 appjail makejail -j nginx -- --network development --eport 8080
 ```
 
@@ -225,3 +227,40 @@ Open a shell and run `appjail makejail`:
 ```sh
 appjail makejail -j nginx -- --network web
 ```
+
+### Arguments
+
+* `nginx_tag` (default: `latest`): see [#tags](#tags).
+
+## How to build the Image
+
+Make any changes you want to your image.
+
+```
+INCLUDE options/network.makejail
+INCLUDE gh+AppJail-makejails/nginx --file build.makejail
+
+SYSRC nginx_enable=YES
+SERVICE nginx start
+```
+
+Build the jail:
+
+```sh
+appjail makejail -j nginx
+```
+
+Remove unportable or unnecessary files and directories and export the jail:
+
+```sh
+appjail stop nginx
+appjail cmd local nginx sh -c "rm -f var/log/*"
+appjail cmd local nginx sh -c "rm -f var/log/nginx/*"
+appjail cmd local nginx vi etc/rc.conf
+appjail image export nginx
+```
+
+## Tags
+
+* `latest` (osarch: `amd64`, osversion: `13.2-RELEASE`).
+* `v13_1` (osarch: `amd64`, osversion: `13.1-RELEASE`).
