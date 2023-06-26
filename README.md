@@ -262,5 +262,7 @@ appjail image export nginx
 
 ## Tags
 
-* `latest` (osarch: `amd64`, osversion: `13.2-RELEASE`).
-* `13.1` (osarch: `amd64`, osversion: `13.1-RELEASE`).
+| Tag      | Arch     | Version        |
+| -------- | -------- | -------------- |
+| `latest` | `amd64`  | `13.2-RELEASE` |
+| `13.1`   | `amd64`  | `13.1-RELEASE` |
