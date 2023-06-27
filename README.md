@@ -256,6 +256,8 @@ Remove unportable or unnecessary files and directories and export the jail:
 appjail stop nginx
 appjail cmd local nginx sh -c "rm -f var/log/*"
 appjail cmd local nginx sh -c "rm -f var/log/nginx/*"
+appjail cmd local nginx sh -c "rm -f var/db/pkg/*"
+appjail cmd local nginx sh -c "rm -f var/cache/pkg/*"
 appjail cmd local nginx vi etc/rc.conf
 appjail image export nginx
 ```
