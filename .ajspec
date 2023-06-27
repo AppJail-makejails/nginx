@@ -1,17 +1,17 @@
 tags: latest
 latest.arch: amd64
 latest.name: "nginx"
-latest.timestamp.amd64: 1687772894
-latest.sum.amd64: f818aa0521c9909a4d8674c710769231285ff1526c8e07c180b0fadae34b7b0d
-latest.size.amd64: 20197072
-latest.source.amd64: https://dtxdf.duckdns.org/22DbG4y2z2/nginx_latest_amd64_image_appjail
-latest.source.amd64+: https://anonget.onrender.com/22DbG4y2z2/nginx_latest_amd64_image_appjail
+latest.timestamp.amd64: 1687875320
+latest.sum.amd64: e910a65e443ab0db2a5acd252bbe32a738e572e2a14db5d8417efa7683b198c1
+latest.size.amd64: 2362024
+latest.source.amd64: https://dtxdf.duckdns.org/ofB8S0yezc/nginx_latest_amd64_image_appjail
+latest.source.amd64+: https://anonget.onrender.com/ofB8S0yezc/nginx_latest_amd64_image_appjail
 
 tags+: 13.1
 13.1.arch: amd64
 13.1.name: "nginx"
-13.1.timestamp.amd64: 1687774447
-13.1.sum.amd64: b5d19bd3e634efdcff0dea0bd6081b26003ee1a36df2d218bf2142ec44576826
-13.1.size.amd64: 20166612
-13.1.source.amd64: https://dtxdf.duckdns.org/p5RaGcy1z3/nginx_v13_1_amd64_image_appjail
-13.1.source.amd64+: https://anonget.onrender.com/p5RaGcy1z3/nginx_v13_1_amd64_image_appjail
+13.1.timestamp.amd64: 1687876194
+13.1.sum.amd64: 6fdfca78b5d675bc9d65a34de18a11646da3f56033d15d5788960b41ae5ccd0b
+13.1.size.amd64: 2336756
+13.1.source.amd64: https://dtxdf.duckdns.org/4bB5S6y4z4/nginx_13_1_amd64_image_appjail
+13.1.source.amd64+: https://anonget.onrender.com/4bB5S6y4z4/nginx_13_1_amd64_image_appjail
