@@ -1,17 +1,15 @@
-tags: latest
-latest.arch: amd64
-latest.name: "nginx"
-latest.timestamp.amd64: 1687875320
-latest.sum.amd64: e910a65e443ab0db2a5acd252bbe32a738e572e2a14db5d8417efa7683b198c1
-latest.size.amd64: 2362024
-latest.source.amd64: https://dtxdf.duckdns.org/ofB8S0yezc/nginx_latest_amd64_image_appjail
-latest.source.amd64+: https://anonget.onrender.com/ofB8S0yezc/nginx_latest_amd64_image_appjail
-
-tags+: 13.1
+tags: 13.1
 13.1.arch: amd64
 13.1.name: "nginx"
-13.1.timestamp.amd64: 1687876194
-13.1.sum.amd64: 6fdfca78b5d675bc9d65a34de18a11646da3f56033d15d5788960b41ae5ccd0b
-13.1.size.amd64: 2336756
-13.1.source.amd64: https://dtxdf.duckdns.org/4bB5S6y4z4/nginx_13_1_amd64_image_appjail
-13.1.source.amd64+: https://anonget.onrender.com/4bB5S6y4z4/nginx_13_1_amd64_image_appjail
+13.1.timestamp.amd64: 1689118188
+13.1.sum.amd64: 49616694fb05938b83a42992e929dee787ebecc426104073dcc8baa7ab2368d2
+13.1.size.amd64: 18944304
+13.1.source.amd64: "https://dl.dropboxusercontent.com/scl/fi/dlg0zimybpxqrbo3ybz4w/nginx-13.1-amd64-image.appjail?rlkey=ccsh5s6g3fv6ddl35lbeoiuuz&dl=0"
+
+tags+: 13.2
+13.2.arch: amd64
+13.2.name: "nginx"
+13.2.timestamp.amd64: 1689118193
+13.2.sum.amd64: b2b8aa70abf6f329cf97321ec8d3d1631cfde08eeb53ac8a0ddaba8904b41a10
+13.2.size.amd64: 18978116
+13.2.source.amd64: "https://dl.dropboxusercontent.com/scl/fi/jg2o79nfrty5c4ib2f40g/nginx-13.2-amd64-image.appjail?rlkey=16cguuwv65f5322ccvpyd28p2&dl=0"
