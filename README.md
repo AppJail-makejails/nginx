@@ -166,7 +166,7 @@ appjail image export nginx
 
 ## Tags
 
-| Tag    | Arch     | Version        |
-| ------ | -------- | -------------- |
-| `13.2` | `amd64`  | `13.2-RELEASE` |
-| `13.1` | `amd64`  | `13.1-RELEASE` |
+| Tag    | Arch     | Version           |
+| ------ | -------- | ----------------- |
+| `13.2` | `amd64`  | `13.2-RELEASE-p1` |
+| `13.1` | `amd64`  | `13.1-RELEASE-p8` |
