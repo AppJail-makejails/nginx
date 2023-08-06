@@ -1,15 +1,7 @@
-tags: 13.1
-13.1.arch: amd64
-13.1.name: "nginx"
-13.1.timestamp.amd64: 1689212912
-13.1.sum.amd64: e8798bebbb02b4e50a52ebd5b992e1d6f626dbe46c55df34abfe92aab04c0411
-13.1.size.amd64: 18936868
-13.1.source.amd64: "https://dl.dropboxusercontent.com/scl/fi/dlg0zimybpxqrbo3ybz4w/nginx-13.1-amd64-image.appjail?rlkey=ccsh5s6g3fv6ddl35lbeoiuuz&dl=0"
-
-tags+: 13.2
+tags: 13.2
 13.2.arch: amd64
 13.2.name: "nginx"
-13.2.timestamp.amd64: 1689213145
-13.2.sum.amd64: c7fb2b8cb98d0cbe7edeb20e52d1c55b98b093b84fe37f0afb6957c644efc76e
-13.2.size.amd64: 18968716
+13.2.timestamp.amd64: 1691339643
+13.2.sum.amd64: c0c13769798d1af56c14195dee4738c8b0ea7bb5787ebe984cf5d1f54cdde29b
+13.2.size.amd64: 18817372
 13.2.source.amd64: "https://dl.dropboxusercontent.com/scl/fi/jg2o79nfrty5c4ib2f40g/nginx-13.2-amd64-image.appjail?rlkey=16cguuwv65f5322ccvpyd28p2&dl=0"
