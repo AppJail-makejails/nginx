@@ -1,7 +1,7 @@
 tags: 13.2
 13.2.arch: amd64
 13.2.name: "nginx"
-13.2.timestamp.amd64: 1691339643
-13.2.sum.amd64: c0c13769798d1af56c14195dee4738c8b0ea7bb5787ebe984cf5d1f54cdde29b
-13.2.size.amd64: 18817372
-13.2.source.amd64: "https://dl.dropboxusercontent.com/scl/fi/jg2o79nfrty5c4ib2f40g/nginx-13.2-amd64-image.appjail?rlkey=16cguuwv65f5322ccvpyd28p2&dl=0"
+13.2.timestamp.amd64: 1692007141
+13.2.sum.amd64: d44428c7ca2e3a1b01ac27c098ae00ec0311db37726861a357fe6d2daf166393
+13.2.size.amd64: 19050896
+13.2.source.amd64: "https://drive.google.com/uc?export=download&id=1uPRgmP8N0WzwlnSvj_Cw6Fa9WXHeZoUG"
