@@ -1,7 +1,7 @@
 tags: 13.2
 13.2.arch: amd64
 13.2.name: "nginx"
-13.2.timestamp.amd64: 1694734359
-13.2.sum.amd64: 50f624bfd3b3fc0fa25711c0a32995ae34979a3b0e6bac3f4e7fd134af6e3ec6
-13.2.size.amd64: 18747544
+13.2.timestamp.amd64: 1695824795
+13.2.sum.amd64: 7f657c5f6456c713365db89850e513d2d7358bc9b166eb2bb2f767179ca212ca
+13.2.size.amd64: 18961028
 13.2.source.amd64: "http://appjail.hpc.at/nginx/13.2-amd64-image.appjail"
