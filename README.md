@@ -141,8 +141,6 @@ Make any changes you want to your image.
 ```
 INCLUDE options/network.makejail
 INCLUDE gh+AppJail-makejails/nginx --file build.makejail
-
-SYSRC nginx_enable=YES
 ```
 
 Build the jail:
