@@ -134,33 +134,6 @@ appjail makejail -j nginx -- --network development
 
 * `nginx_tag` (default: `13.2`): see [#tags](#tags).
 
-## How to build the Image
-
-Make any changes you want to your image.
-
-```
-INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/nginx --file build.makejail
-```
-
-Build the jail:
-
-```sh
-appjail makejail -j nginx
-```
-
-Remove unportable or unnecessary files and directories and export the jail:
-
-```sh
-appjail stop nginx
-appjail cmd local nginx sh -c "rm -f var/log/*"
-appjail cmd local nginx sh -c "rm -f var/log/nginx/*"
-appjail cmd local nginx sh -c "rm -f var/cache/pkg/*"
-appjail cmd local nginx sh -c "rm -f var/run/*"
-appjail cmd local nginx vi etc/rc.conf
-appjail image export nginx
-```
-
 ## Tags
 
 | Tag    | Arch     | Version        | Type    |
