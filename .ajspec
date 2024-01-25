@@ -14,3 +14,5 @@ tags+: 14.0
 14.0.size.amd64: 30667685
 14.0.source.amd64: "http://appjail.hpc.at/nginx/14.0-amd64-image.appjail"
 14.0.source.amd64+: "https://images.all101bsd.download/nginx/14.0-amd64-image.appjail"
+entrypoint: "gh+AppJail-makejails/nginx"
+ajspec: ".ajspec"
