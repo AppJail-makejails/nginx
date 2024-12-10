@@ -139,4 +139,4 @@ appjail makejail -j nginx -- --network development
 | Tag    | Arch     | Version        | Type    |
 | ------ | -------- | -------------- | ------- |
 | `13.4` | `amd64`  | `13.4-RELEASE` | `thin`  |
-| `14.1` | `amd64`  | `14.1-RELEASE` | `thin`  |
+| `14.2` | `amd64`  | `14.2-RELEASE` | `thin`  |
