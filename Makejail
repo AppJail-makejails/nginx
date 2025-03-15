@@ -1,6 +1,6 @@
 INCLUDE options/options.makejail
 
-ARG nginx_tag=13.4
+ARG nginx_tag=13.5
 ARG nginx_ajspec=gh+AppJail-makejails/nginx
 
 FROM --entrypoint "${nginx_ajspec}" nginx:${nginx_tag}
