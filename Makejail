@@ -1,9 +1,0 @@
-INCLUDE options/options.makejail
-
-ARG nginx_tag=14.3
-ARG nginx_ajspec=gh+AppJail-makejails/nginx
-
-FROM --entrypoint "${nginx_ajspec}" nginx:${nginx_tag}
-
-SYSRC nginx_enable=YES
-SERVICE nginx start

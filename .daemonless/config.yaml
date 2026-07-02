@@ -1,0 +1,18 @@
+build:
+  variants:
+    - tag: 15.1
+      containerfile: Containerfile
+      aliases: ["latest"]
+      default: true
+      args:
+        FREEBSD_RELEASE: "15.1"
+    - tag: 15.1-devel
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        FLAVOUR: '-devel'
+    - tag: 15.1-full
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        FLAVOUR: '-full'
