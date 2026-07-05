@@ -1,0 +1,5 @@
+ARG nginx_from=ghcr.io/appjail-makejails/nginx
+ARG nginx_tag=latest
+
+OPTION overwrite=force
+OPTION from=${nginx_from}:${nginx_tag}
