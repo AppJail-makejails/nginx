@@ -183,6 +183,10 @@ appjail oci run -Pd \
 * `nginx_from` (default: `ghcr.io/appjail-makejails/nginx`): Location of OCI image. See also [OCI Configuration](#oci-configuration).
 * `nginx_tag` (default: `latest`): OCI image tag. See also [OCI Configuration](#oci-configuration).
 
+### Environment (OCI image)
+
+* `PGID` (default: `1000`): Equivalent to `PUID` but for the Process Group ID.
+* `PUID` (default: `1000`): Process User ID for the container's main process, allowing you to match the owner of files written to mounted host volumes to your host system's user. Writable volumes are changed based on this environment variable.
 ### Environment (stage: build)
 
 * `NGINX_ENTRYPOINT_LOCAL_RESOLVERS` (optional): If set, the `NGINX_LOCAL_RESOLVERS` environment variable will contain the name servers extracted from the jail's `/etc/resolv.conf` file, so that templates can configure the [resolver](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver).
@@ -205,16 +209,22 @@ build:
       default: true
       args:
         FREEBSD_RELEASE: "15.1"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-devel
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         FLAVOUR: '-devel'
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-full
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         FLAVOUR: '-full'
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
 ```
 
 ## Notes

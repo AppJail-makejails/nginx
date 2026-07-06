@@ -3,6 +3,7 @@ ARG FREEBSD_RELEASE
 FROM ghcr.io/appjail-makejails/core:${FREEBSD_RELEASE}
 
 ARG FLAVOUR
+ARG NO_PKGCLEAN
 
 LABEL org.opencontainers.image.title="NGINX" \
     org.opencontainers.image.description="Robust and small WWW server" \
@@ -11,17 +12,23 @@ LABEL org.opencontainers.image.title="NGINX" \
     org.opencontainers.image.vendor="DtxdF" \
     org.opencontainers.image.authors="Jesús Daniel Colmenares Oviedo <dtxdf@disroot.org>"
 
-RUN pkg update && \
-    pkg install -y nginx${FLAVOUR} gettext-runtime FreeBSD-utilities && \
-    pkg clean -a && \
-    rm -rf /var/cache/pkg/* /var/db/pkg/repos/* && \
+RUN set -xe; \
+    \
+    pkg update; \
+    pkg install -U nginx${FLAVOUR} gettext-runtime FreeBSD-utilities; \
+    \
+    if [ -z "${NO_PKGCLEAN}" ]; then \
+        pkg clean -a; \
+        rm -rf /var/cache/pkg/* /var/db/pkg/repos/*; \
+    fi; \
+    \
     mkdir -p \
         /entrypoint.d \
         /usr/local/etc/nginx/stream-conf.d \
         /usr/local/etc/nginx/conf.d \
         /usr/local/etc/nginx/sites-enabled \
-        /usr/local/www/html && \
-    chmod 555 /usr/local/www/html && \
+        /usr/local/www/html; \
+    chmod 555 /usr/local/www/html; \
     cp -a /usr/local/www/nginx-dist/index.html /usr/local/www/html
 
 COPY nginx.conf /usr/local/etc/nginx/nginx.conf
