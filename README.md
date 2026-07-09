@@ -83,7 +83,7 @@ $ appjail oci run -Pd \
     -o overwrite=force \
     -o virtualnet=":<random> default" \
     -o nat \
-    -o fstab="/host/path/nginx.conf /usr/local/etc/nginx/nginx.conf nullfs ro" \
+    -o fstab="/host/path/nginx.conf usr/local/etc/nginx/nginx.conf nullfs ro" \
     ghcr.io/appjail-makejails/nginx:15.1 nginx
 ```
 
