@@ -19,8 +19,9 @@ RUN set -xe; \
     \
     if [ -z "${NO_PKGCLEAN}" ]; then \
         pkg clean -a; \
-        rm -rf /var/cache/pkg/* /var/db/pkg/repos/*; \
+        rm -rf /var/cache/pkg/*; \
     fi; \
+    rm -rf /var/db/pkg/repos/*; \
     \
     mkdir -p \
         /entrypoint.d \
