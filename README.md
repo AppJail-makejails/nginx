@@ -185,10 +185,6 @@ appjail oci run -Pd \
 
 ### Environment (OCI image)
 
-* `PGID` (default: `1000`): Equivalent to `PUID` but for the Process Group ID.
-* `PUID` (default: `1000`): Process User ID for the container's main process, allowing you to match the owner of files written to mounted host volumes to your host system's user. Writable volumes are changed based on this environment variable.
-### Environment (stage: build)
-
 * `NGINX_ENTRYPOINT_LOCAL_RESOLVERS` (optional): If set, the `NGINX_LOCAL_RESOLVERS` environment variable will contain the name servers extracted from the jail's `/etc/resolv.conf` file, so that templates can configure the [resolver](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver).
 * `NGINX_ENTRYPOINT_QUIET_LOGS` (optional): Silence verbose output in entrypoint.
 * `NGINX_ENVSUBST_OUTPUT_DIR` (default: `/usr/local/etc/nginx/conf.d`): A directory where the result of executing envsubst is output. The output filename is the template filename with the suffix removed (`/usr/local/etc/nginx/templates/default.conf.template` will be output with the filename `/usr/local/etc/nginx/conf.d/default.conf`).
@@ -196,7 +192,8 @@ appjail oci run -Pd \
 * `NGINX_ENVSUBST_STREAM_TEMPLATE_SUFFIX` (default: `.stream-template`): Equivalent to `NGINX_ENVSUBST_TEMPLATE_SUFFIX` but for the [stream](https://nginx.org/en/docs/stream/ngx_stream_core_module.html) block.
 * `NGINX_ENVSUBST_TEMPLATE_DIR` (default: `/usr/local/etc/nginx/templates`): A directory which contains template files. When this directory doesn't exist, this function will do nothing about template processing.
 * `NGINX_ENVSUBST_TEMPLATE_SUFFIX` (default: `.template`): A suffix of template files. This function only processes the files whose name ends with this suffix.
-
+* `PGID` (default: `1000`): Equivalent to `PUID` but for the Process Group ID.
+* `PUID` (default: `1000`): Process User ID for the container's main process, allowing you to match the owner of files written to mounted host volumes to your host system's user. Writable volumes are changed based on this environment variable.
 
 ## OCI Configuration
 
