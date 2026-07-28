@@ -15,7 +15,7 @@ LABEL org.opencontainers.image.title="NGINX" \
 RUN set -xe; \
     \
     pkg update; \
-    pkg install -U nginx${FLAVOUR} gettext-runtime FreeBSD-utilities; \
+    pkg install -U nginx${FLAVOUR} gettext-runtime; \
     \
     if [ -z "${NO_PKGCLEAN}" ]; then \
         pkg clean -a; \
