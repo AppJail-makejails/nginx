@@ -121,7 +121,7 @@ options:
 services:
   web:
     options:
-      - container: 'boot args:--pull'
+      - container: 'args:--pull'
       - expose: '8080:80'
     volumes:
       - templates: '/usr/local/etc/nginx/templates'
