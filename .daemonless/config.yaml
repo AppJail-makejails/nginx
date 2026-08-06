@@ -15,10 +15,13 @@ build:
         FLAVOUR: '-devel'
         NO_PKGCLEAN: "1"
       cache_dirs: ["pkgcache0:/var/cache/pkg"]
-    - tag: 15.1-full
-      containerfile: Containerfile
-      args:
-        FREEBSD_RELEASE: "15.1"
-        FLAVOUR: '-full'
-        NO_PKGCLEAN: "1"
-      cache_dirs: ["pkgcache0:/var/cache/pkg"]
+    #
+    # IGNORE: required at least GSSAPI_HEIMDAL or GSSAPI_MIT to be defined. Please do 'make config' again
+    #
+    #- tag: 15.1-full
+    #  containerfile: Containerfile
+    #  args:
+    #    FREEBSD_RELEASE: "15.1"
+    #    FLAVOUR: '-full'
+    #    NO_PKGCLEAN: "1"
+    #  cache_dirs: ["pkgcache0:/var/cache/pkg"]
